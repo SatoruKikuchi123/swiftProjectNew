@@ -61,17 +61,21 @@ struct CampSiteList: View {
     
     
     var body: some View {
-//        NavigationView{
-            List {
-                ForEach(fetchRequest.wrappedValue, id: \.self) { campSite in
-                    Section(header: HStack {
-                        HStack {
-                            Text("\(campSite.name!)")
-                                .font(.title3)
-                                .bold()
-                                .background(.cyan)
-                                .foregroundColor(.black)
-                            Spacer()
+        //        NavigationView{
+        List {
+            ForEach(fetchRequest.wrappedValue, id: \.self) { campSite in
+                Section(header: HStack {
+                    HStack {
+                        Text("\(campSite.name!)")
+                            .bold()
+                            .font(.title3)
+//                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.red, lineWidth: 1))
+//                            .background(.cyan)
+//                            .cornerRadius(20)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        HStack{
                             Image(systemName: campSite.favorite ? "star.fill" : "star")
                                 .font(.title3)
                                 .bold()
@@ -80,11 +84,20 @@ struct CampSiteList: View {
                                     campSite.favorite.toggle()
                                     try? context.save()
                                 }
+                            Link("予約はこちら", destination: URL(string: "\(campSite.url!)")!)
                         }
-                    }){
-                        NavigationLink(destination: DetailView(campSite: campSite)){
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                }){
+                    NavigationLink(destination: DetailView(campSite: campSite)){
+                        HStack{
+                            Image(campSite.image!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 100, height: 100)
+                                .clipShape(Circle())
+                                .shadow(radius: 10)
                             VStack(alignment: .leading) {
-                                Text("url：\(campSite.url!)")
                                 Text("評価：\(campSite.review,specifier: "%.1f")")
                                 switch selectedData.month{
                                 case 1:
@@ -97,11 +110,14 @@ struct CampSiteList: View {
                                     Text("1月最低気温：\(campSite.januaryMin)℃")
                                     Text("1月最高気温：\(campSite.januaryMax)℃")
                                 }
+                                Text("メモ:\(campSite.memo!)")
                             }
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                     }
                 }
             }
-//        }
+        }
+        //        }
     }
 }

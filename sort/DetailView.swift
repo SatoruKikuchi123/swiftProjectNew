@@ -12,17 +12,14 @@ struct DetailView: View {
     @EnvironmentObject var selectedData:SelectedData
     @State private var content: String
     private var campSite:CampSite
-    let place = [IdentifiablePlace(lat: 35.335174239514004, long: 136.87209682640605)]
     @State private var region = MKCoordinateRegion(
         //Mapの中心の緯度経度
-        center: CLLocationCoordinate2D(latitude: 35.3416028,
-                                       longitude: 136.8706729),
-        //緯度の表示領域(m)
-        latitudinalMeters: 2000,
-        //経度の表示領域(m)
-        longitudinalMeters: 2000
+        center: CLLocationCoordinate2D(latitude: 35.45669724936197,
+                                       longitude: 137.66726801214264),
+        //表示領域の縮尺
+        span: MKCoordinateSpan(latitudeDelta: 2,
+                               longitudeDelta: 2)
     )
-    
     init(campSite:CampSite){
         self.campSite=campSite
         self.content=campSite.memo ?? ""
@@ -30,6 +27,12 @@ struct DetailView: View {
     
     var body: some View {
         VStack{
+            Image(campSite.image!)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+//                .frame(width: 100, height: 100)
+//                .clipShape(Circle())
+                .shadow(radius: 10)
             List{
                 Section(header: HStack {
                     HStack {
@@ -47,48 +50,51 @@ struct DetailView: View {
                                 campSite.favorite.toggle()
                                 try? context.save()
                             }
+                        Link("予約はこちら", destination: URL(string: "\(campSite.url!)")!)
+
                     }
                 }){
-                    VStack(alignment: .leading) {
-                        Text("url：\(campSite.url!)")
-                        Text("評価：\(campSite.review,specifier: "%.1f")")
-                        switch selectedData.month{
-                        case 1:
+                    Text("評価：\(campSite.review,specifier: "%.1f")")
+                    HStack{
+                        Text("メモ：")
+                        TextField("メモ内容", text: $content)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                    }
+//                        switch selectedData.month{
+//                        case 1:
                             Text("1月最低気温：\(campSite.januaryMin)℃")
                             Text("1月最高気温：\(campSite.januaryMax)℃")
-                        case 2:
+//                        case 2:
                             Text("2月最低気温：\(campSite.februaryMin)℃")
                             Text("2月最高気温：\(campSite.februaryMax)℃")
-                        default:
-                            Text("1月最低気温：\(campSite.januaryMin)℃")
-                            Text("1月最高気温：\(campSite.januaryMax)℃")
+//                        default:
+//                            Text("1月最低気温：\(campSite.januaryMin)℃")
+//                            Text("1月最高気温：\(campSite.januaryMax)℃")
+//                        }
+                    let place = [IdentifiablePlace(lat: campSite.ido, long: campSite.keido)]
+                    Map(coordinateRegion: $region,
+                        //Mapの操作の指定
+                        interactionModes: .all,
+                        //現在地の表示
+                        showsUserLocation: true,
+                        //マーカの指定
+                        annotationItems: place)
+                    { place in
+                        MapAnnotation(coordinate: place.location) {
+                            Image(systemName: "tent.2.circle")
+                                .font(.title2)
+                                .background(Color.orange.cornerRadius(15))
                         }
-                        Text("メモ：\(campSite.memo!)")
                     }
+                    .task(){
+                        //位置情報へのアクセスを要求
+                        let manager = CLLocationManager()
+                        manager.requestWhenInUseAuthorization()
+                    }
+                    .frame(width: 500, height: 300)
                 }
             }
-            Map(coordinateRegion: $region,
-                //Mapの操作の指定
-                interactionModes: .all,
-                //現在地の表示
-                showsUserLocation: true,
-                //マーカの指定
-                annotationItems: place)
-            { place in
-                MapAnnotation(coordinate: place.location) {
-                    Image(systemName: "tortoise.fill")
-                        .foregroundColor(Color(UIColor.systemBackground))
-                        .padding()
-                        .background(Color.orange.cornerRadius(10))
-                }
-            }
-            .task(){
-                //位置情報へのアクセスを要求
-                let manager = CLLocationManager()
-                manager.requestWhenInUseAuthorization()
-            }
-            TextEditor(text: $content)
-                .font(.body)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
