@@ -7,8 +7,10 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var context
     @EnvironmentObject var selectedData: SelectedData
     
-    let monthMin=["","januaryMin","februaryMin"]
-    let monthMax=["","januaryMax","februaryMax"]
+    let monthMin=["","januaryMin","februaryMin","marchMin","aprilMin","mayMin","juneMin","julyMin","augustMin","septemberMin","octoberMin","novemberMin","decemberMin"]
+    let monthMax=["","januaryMax","februaryMax","marchMax","aprilMax","mayMax","juneMax","julyMax","augustMax","septemberMax","octoberMax","novemberMax","decemberMax"]
+//    let monthMin=["","januaryMin","februaryMin"]
+//    let monthMax=["","januaryMax","februaryMax"]
     let sortLabel=["寒くない順","暑くない順","評価が高い順","お気に入り順"]
     @State private var selectedSort = 0
     @State private var selectedMin = 0
