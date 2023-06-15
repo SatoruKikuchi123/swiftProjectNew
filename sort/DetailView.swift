@@ -67,7 +67,7 @@ struct DetailView: View {
                     Text("2月最高気温：\(campSite.februaryMax)℃")
                     Text("3月最低気温：\(campSite.marchMin)℃")
                     Text("3月最高気温：\(campSite.marchMax)℃")
-//                    Text("4月最低気温：\(campSite.aprilMin)℃")
+                    Text("4月最低気温：\(campSite.aprilMin)℃")
 //                    Text("4月最高気温：\(campSite.aprilMax)℃")
 //                    Text("5月最低気温：\(campSite.mayMin)℃")
 //                    Text("5月最高気温：\(campSite.mayMax)℃")
@@ -83,8 +83,8 @@ struct DetailView: View {
 //                    Text("10月最高気温：\(campSite.octoberMax)℃")
 //                    Text("11月最低気温：\(campSite.novemberMin)℃")
 //                    Text("11月最高気温：\(campSite.novemberMax)℃")
-//                    Text("12月最低気温：\(campSite.februaryMin)℃")
-//                    Text("12月最高気温：\(campSite.februaryMax)℃")
+//                    Text("12月最低気温：\(campSite.decemberMin)℃")
+//                    Text("12月最高気温：\(campSite.decemberMax)℃")
                     
                     let place = [IdentifiablePlace(lat: campSite.ido, long: campSite.keido)]
                     Map(coordinateRegion: $region,

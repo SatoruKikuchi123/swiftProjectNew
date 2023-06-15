@@ -7,7 +7,7 @@ func registSampleData(context: NSManagedObjectContext) {
         ["001", "ふもとっぱら","https://reserve.fumotoppara.net/reserved/reserved-calendar-list","3.9","false","","fumoto","35.399567917778164", "138.56501585339282",
          "-5", "5", "-3","6", "-1", "9",
          "4","16", "9", "20", "14","22",
-         "18", "26", "19","28", "16", "24",
+         "18", "26", "19","24", "16", "24",
          "10","18", "3", "13", "-3","8"],
         ["002", "陣馬形山","https://www.nap-camp.com/nagano/12246?ref_host=widget","4.2","false","","jinnba",
          "35.6727697255131", "137.9831038423283",
@@ -92,24 +92,24 @@ func registSampleData(context: NSManagedObjectContext) {
         newCampSite.februaryMax = Int16(campSite[12])!  // 2月最高気温
         newCampSite.marchMin = Int16(campSite[13])!  // 1月最低気温
         newCampSite.marchMax = Int16(campSite[14])!  // 1月最高気温
-//        newCampSite.aprilMin = Int16(campSite[15])!  // 1月最低気温
-//        newCampSite.aprilMax = Int16(campSite[16])!  // 1月最高気温
-//        newCampSite.mayMin = Int16(campSite[17])!  // 1月最低気温
-//        newCampSite.mayMax = Int16(campSite[18])!  // 1月最高気温
-//        newCampSite.juneMin = Int16(campSite[19])!  // 1月最低気温
-//        newCampSite.juneMax = Int16(campSite[20])!  // 1月最高気温
-//        newCampSite.julyMin = Int16(campSite[21])!  // 1月最低気温
-//        newCampSite.julyMax = Int16(campSite[22])!  // 1月最高気温
-//        newCampSite.augustMin = Int16(campSite[23])!  // 1月最低気温
-//        newCampSite.augustMax = Int16(campSite[24])!  // 1月最高気温
-//        newCampSite.septemberMin = Int16(campSite[25])!  // 1月最低気温
-//        newCampSite.septemberMax = Int16(campSite[26])!  // 1月最高気温
-//        newCampSite.octoberMin = Int16(campSite[27])!  // 1月最低気温
-//        newCampSite.octoberMax = Int16(campSite[28])!  // 1月最高気温
-//        newCampSite.novemberMin = Int16(campSite[29])!  // 1月最低気温
-//        newCampSite.novemberMax = Int16(campSite[30])!  // 1月最高気温
-//        newCampSite.decemberMin = Int16(campSite[31])!  // 1月最低気温
-//        newCampSite.decemberMax = Int16(campSite[32])!  // 1月最高気温
+        newCampSite.aprilMin = Int16(campSite[15])!  // 1月最低気温
+        newCampSite.aprilMax = Int16(campSite[16])!  // 1月最高気温
+        newCampSite.mayMin = Int16(campSite[17])!  // 1月最低気温
+        newCampSite.mayMax = Int16(campSite[18])!  // 1月最高気温
+        newCampSite.juneMin = Int16(campSite[19])!  // 1月最低気温
+        newCampSite.juneMax = Int16(campSite[20])!  // 1月最高気温
+        newCampSite.julyMin = Int16(campSite[21])!  // 1月最低気温
+        newCampSite.julyMax = Int16(campSite[22])!  // 1月最高気温
+        newCampSite.augustMin = Int16(campSite[23])!  // 1月最低気温
+        newCampSite.augustMax = Int16(campSite[24])!  // 1月最高気温
+        newCampSite.septemberMin = Int16(campSite[25])!  // 1月最低気温
+        newCampSite.septemberMax = Int16(campSite[26])!  // 1月最高気温
+        newCampSite.octoberMin = Int16(campSite[27])!  // 1月最低気温
+        newCampSite.octoberMax = Int16(campSite[28])!  // 1月最高気温
+        newCampSite.novemberMin = Int16(campSite[29])!  // 1月最低気温
+        newCampSite.novemberMax = Int16(campSite[30])!  // 1月最高気温
+        newCampSite.decemberMin = Int16(campSite[31])!  // 1月最低気温
+        newCampSite.decemberMax = Int16(campSite[32])!  // 1月最高気温
     }
     
     /// コミット
