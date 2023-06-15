@@ -67,13 +67,13 @@ struct CampSiteList: View {
                     HStack {
                         Text("\(campSite.name!)")
                             .bold()
-                            .font(.title3)
+                            .font(.body)
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
 
                         HStack{
                             Image(systemName: campSite.favorite ? "star.fill" : "star")
-                                .font(.title3)
+                                .font(.headline)
                                 .bold()
                                 .foregroundColor(.yellow)
                                 .onTapGesture {
