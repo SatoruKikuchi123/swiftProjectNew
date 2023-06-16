@@ -75,14 +75,14 @@ psql等の一般的なRDBMSは、データベースを利用したい各ソフ�
 <img width="703" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/7d4f347c-c74e-4529-af26-64c1cd4c8add">
 
 
-####データベースからデータを取得するコード
+#### データベースからデータを取得するコード
 
 
 <img width="706" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/413a5f4b-de69-4b2f-aee0-e2928897c269">
 
 
 
-##完成した画面
+## 完成した画面
 <img width="406" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/c555f819-523f-4874-9d44-1038e81da78f">
 
 
