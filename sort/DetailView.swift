@@ -50,7 +50,7 @@ struct DetailView: View {
                                 campSite.favorite.toggle()
                                 try? context.save()
                             }
-                        Link("予約はこちら", destination: URL(string: "\(campSite.url!)")!)
+                        Link("予約", destination: URL(string: "\(campSite.url!)")!)
                         
                     }
                 }){
@@ -106,33 +106,6 @@ struct DetailView: View {
                     Text("緯度：\(campSite.ido)")
                     Text("経度：\(campSite.keido)")
 
-                    
-//                    Text("1月最低気温：\(campSite.januaryMin)℃")
-//                    Text("1月最高気温：\(campSite.januaryMax)℃")
-//                    Text("2月最低気温：\(campSite.februaryMin)℃")
-//                    Text("2月最高気温：\(campSite.februaryMax)℃")
-//                    Text("3月最低気温：\(campSite.marchMin)℃")
-//                    Text("3月最高気温：\(campSite.marchMax)℃")
-//                    Text("4月最低気温：\(campSite.aprilMin)℃")
-//                    Text("4月最高気温：\(campSite.aprilMax)℃")
-//                    Text("5月最低気温：\(campSite.mayMin)℃")
-//                    Text("5月最高気温：\(campSite.mayMax)℃")
-                    
-                    //                        Text("6月最低気温：\(campSite.juneMin)℃")
-                    //                        Text("6月最高気温：\(campSite.juneMax)℃")
-                    //                    Text("7月最低気温：\(campSite.julyMin)℃")
-                    //                    Text("7月最高気温：\(campSite.julyMax)℃")
-                    //                    Text("8月最低気温：\(campSite.augustMin)℃")
-                    //                    Text("8月最高気温：\(campSite.augustMax)℃")
-                    //                    Text("9月最低気温：\(campSite.septemberMin)℃")
-                    //                    Text("9月最高気温：\(campSite.septemberMax)℃")
-                    //                    Text("10月最低気温：\(campSite.octoberMin)℃")
-                    //                    Text("10月最高気温：\(campSite.octoberMax)℃")
-                    //                    Text("11月最低気温：\(campSite.novemberMin)℃")
-                    //                    Text("11月最高気温：\(campSite.novemberMax)℃")
-                    //                    Text("12月最低気温：\(campSite.decemberMin)℃")
-                    //                    Text("12月最高気温：\(campSite.decemberMax)℃")
-                    
                     let place = [IdentifiablePlace(lat: campSite.ido, long: campSite.keido)]
                     Map(coordinateRegion: $region,
                         //Mapの操作の指定
@@ -182,3 +155,32 @@ struct IdentifiablePlace: Identifiable {
             longitude: long)
     }
 }
+
+
+
+
+//                    Text("1月最低気温：\(campSite.januaryMin)℃")
+//                    Text("1月最高気温：\(campSite.januaryMax)℃")
+//                    Text("2月最低気温：\(campSite.februaryMin)℃")
+//                    Text("2月最高気温：\(campSite.februaryMax)℃")
+//                    Text("3月最低気温：\(campSite.marchMin)℃")
+//                    Text("3月最高気温：\(campSite.marchMax)℃")
+//                    Text("4月最低気温：\(campSite.aprilMin)℃")
+//                    Text("4月最高気温：\(campSite.aprilMax)℃")
+//                    Text("5月最低気温：\(campSite.mayMin)℃")
+//                    Text("5月最高気温：\(campSite.mayMax)℃")
+
+//                        Text("6月最低気温：\(campSite.juneMin)℃")
+//                        Text("6月最高気温：\(campSite.juneMax)℃")
+//                    Text("7月最低気温：\(campSite.julyMin)℃")
+//                    Text("7月最高気温：\(campSite.julyMax)℃")
+//                    Text("8月最低気温：\(campSite.augustMin)℃")
+//                    Text("8月最高気温：\(campSite.augustMax)℃")
+//                    Text("9月最低気温：\(campSite.septemberMin)℃")
+//                    Text("9月最高気温：\(campSite.septemberMax)℃")
+//                    Text("10月最低気温：\(campSite.octoberMin)℃")
+//                    Text("10月最高気温：\(campSite.octoberMax)℃")
+//                    Text("11月最低気温：\(campSite.novemberMin)℃")
+//                    Text("11月最高気温：\(campSite.novemberMax)℃")
+//                    Text("12月最低気温：\(campSite.decemberMin)℃")
+//                    Text("12月最高気温：\(campSite.decemberMax)℃")

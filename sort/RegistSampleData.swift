@@ -69,50 +69,50 @@ func registSampleData(context: NSManagedObjectContext) {
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
     fetchRequest.entity = CampSite.entity()
     let campSites = try? context.fetch(fetchRequest) as? [CampSite]
-    //    if(campSites?.count == 0){
-    for campSite in campSites! {
-        context.delete(campSite)
-    }
-    /// テーブル登録
-    for campSite in campSiteList {
-        let newCampSite = CampSite(context: context)
-        newCampSite.id = campSite[0]         //id
-        newCampSite.name = campSite[1]        // キャンプ場名
-        newCampSite.url =  campSite[2] // url
-        newCampSite.review = Float(campSite[3])! // review
-        newCampSite.favorite = Bool(campSite[4])! // favorite
-        newCampSite.memo = campSite[5] // memo
-        newCampSite.image = campSite[6] // image
-        newCampSite.ido = Double(campSite[7])! // ido
-        newCampSite.keido = Double(campSite[8])! // keido
+    if(campSites?.count == 0){
+        for campSite in campSites! {
+            context.delete(campSite)
+        }
+        /// テーブル登録
+        for campSite in campSiteList {
+            let newCampSite = CampSite(context: context)
+            newCampSite.id = campSite[0]         //id
+            newCampSite.name = campSite[1]        // キャンプ場名
+            newCampSite.url =  campSite[2] // url
+            newCampSite.review = Float(campSite[3])! // review
+            newCampSite.favorite = Bool(campSite[4])! // favorite
+            newCampSite.memo = campSite[5] // memo
+            newCampSite.image = campSite[6] // image
+            newCampSite.ido = Double(campSite[7])! // ido
+            newCampSite.keido = Double(campSite[8])! // keido
+            
+            newCampSite.januaryMin = Int16(campSite[9])!  // 1月最低気温
+            newCampSite.januaryMax = Int16(campSite[10])!  // 1月最高気温
+            newCampSite.februaryMin = Int16(campSite[11])!  // 2月最低気温
+            newCampSite.februaryMax = Int16(campSite[12])!  // 2月最高気温
+            newCampSite.marchMin = Int16(campSite[13])!  // 1月最低気温
+            newCampSite.marchMax = Int16(campSite[14])!  // 1月最高気温
+            newCampSite.aprilMin = Int16(campSite[15])!  // 1月最低気温
+            newCampSite.aprilMax = Int16(campSite[16])!  // 1月最高気温
+            newCampSite.mayMin = Int16(campSite[17])!  // 1月最低気温
+            newCampSite.mayMax = Int16(campSite[18])!  // 1月最高気温
+            newCampSite.juneMin = Int16(campSite[19])!  // 1月最低気温
+            newCampSite.juneMax = Int16(campSite[20])!  // 1月最高気温
+            newCampSite.julyMin = Int16(campSite[21])!  // 1月最低気温
+            newCampSite.julyMax = Int16(campSite[22])!  // 1月最高気温
+            newCampSite.augustMin = Int16(campSite[23])!  // 1月最低気温
+            newCampSite.augustMax = Int16(campSite[24])!  // 1月最高気温
+            newCampSite.septemberMin = Int16(campSite[25])!  // 1月最低気温
+            newCampSite.septemberMax = Int16(campSite[26])!  // 1月最高気温
+            newCampSite.octoberMin = Int16(campSite[27])!  // 1月最低気温
+            newCampSite.octoberMax = Int16(campSite[28])!  // 1月最高気温
+            newCampSite.novemberMin = Int16(campSite[29])!  // 1月最低気温
+            newCampSite.novemberMax = Int16(campSite[30])!  // 1月最高気温
+            newCampSite.decemberMin = Int16(campSite[31])!  // 1月最低気温
+            newCampSite.decemberMax = Int16(campSite[32])!  // 1月最高気温
+        }
         
-        newCampSite.januaryMin = Int16(campSite[9])!  // 1月最低気温
-        newCampSite.januaryMax = Int16(campSite[10])!  // 1月最高気温
-        newCampSite.februaryMin = Int16(campSite[11])!  // 2月最低気温
-        newCampSite.februaryMax = Int16(campSite[12])!  // 2月最高気温
-        newCampSite.marchMin = Int16(campSite[13])!  // 1月最低気温
-        newCampSite.marchMax = Int16(campSite[14])!  // 1月最高気温
-        newCampSite.aprilMin = Int16(campSite[15])!  // 1月最低気温
-        newCampSite.aprilMax = Int16(campSite[16])!  // 1月最高気温
-        newCampSite.mayMin = Int16(campSite[17])!  // 1月最低気温
-        newCampSite.mayMax = Int16(campSite[18])!  // 1月最高気温
-        newCampSite.juneMin = Int16(campSite[19])!  // 1月最低気温
-        newCampSite.juneMax = Int16(campSite[20])!  // 1月最高気温
-        newCampSite.julyMin = Int16(campSite[21])!  // 1月最低気温
-        newCampSite.julyMax = Int16(campSite[22])!  // 1月最高気温
-        newCampSite.augustMin = Int16(campSite[23])!  // 1月最低気温
-        newCampSite.augustMax = Int16(campSite[24])!  // 1月最高気温
-        newCampSite.septemberMin = Int16(campSite[25])!  // 1月最低気温
-        newCampSite.septemberMax = Int16(campSite[26])!  // 1月最高気温
-        newCampSite.octoberMin = Int16(campSite[27])!  // 1月最低気温
-        newCampSite.octoberMax = Int16(campSite[28])!  // 1月最高気温
-        newCampSite.novemberMin = Int16(campSite[29])!  // 1月最低気温
-        newCampSite.novemberMax = Int16(campSite[30])!  // 1月最高気温
-        newCampSite.decemberMin = Int16(campSite[31])!  // 1月最低気温
-        newCampSite.decemberMax = Int16(campSite[32])!  // 1月最高気温
+        /// コミット
+        try? context.save()
     }
-    
-    /// コミット
-    try? context.save()
 }
-//}
