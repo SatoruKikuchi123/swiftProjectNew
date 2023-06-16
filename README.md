@@ -83,22 +83,14 @@ psql等の一般的なRDBMSは、データベースを利用したい各ソフ�
 
 
 ## 完成した画面
+
 <img width="406" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/c555f819-523f-4874-9d44-1038e81da78f">
 
-
-
-
+<img width="409" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/1c07dd34-cf33-422d-8a92-94c12b40192d">
 
 <img width="405" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/7a4f43c8-fd3d-4336-b3c7-90c2be6b3779">
 
-
-
-
-
 <img width="413" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/879ec5ce-9f46-4a5b-a34f-85a6b44ce7e9">
-
-
-
 
 
 ## 作者
