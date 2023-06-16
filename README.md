@@ -12,20 +12,11 @@
 ---
 
 ### 【使用システム】
+- Swift UI
+- Core Data
+- MapKit
 
-<div>
-<img src="https://img.shields.io/badge/-Git-F05032.svg?logo=git&style=plastic">
-<img src="https://img.shields.io/badge/-Javascript-F7DF1E.svg?logo=javascript&style=plastic">
-<img src="https://img.shields.io/badge/-Typescript-007ACC.svg?logo=typescript&style=plastic">
-<img src="https://img.shields.io/badge/-Css3-1572B6.svg?logo=css3&style=plastic">
-<img src="https://img.shields.io/badge/-Html5-E34F26.svg?logo=html5&style=plastic">
-<img src="https://img.shields.io/badge/-Postgresql-336791.svg?logo=postgresql&style=plastic">
-<img src="https://img.shields.io/badge/-Postman-FF6C37.svg?logo=postman&style=plastic">
-<img src="https://img.shields.io/badge/-React-61DAFB.svg?logo=react&style=plastic">
-<img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=plastic">
-<img src="https://img.shields.io/badge/-Nodemon-76D04B.svg?logo=nodemon&style=plastic">
-<img src="https://img.shields.io/badge/-Npm-CB3837.svg?logo=npm&style=plastic">
-</div>
+
 
 <hr>
 
@@ -38,6 +29,7 @@
 - 【困りごと】行く時期に応じた最適なキャンプ場を選びにくい
 -           理由 → ナップ等の既存のキャンプ場予約システムには温度情報がない
 - 【欲しいシステム】 行く時期に応じた最適なキャンプ場一覧を表示
+![image](https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/b7511d2a-00b7-4607-8ac9-dc77d5b516cd)
 
 ## 機能
 
@@ -54,6 +46,34 @@
 ## データベーススキーマ
 
 <img width="266" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/06146ad5-4831-4efd-9dc8-fabf9c007943">
+
+## 学び
+学びとして
+coredataについて紹介します
+CoreDataは、オブジェクトを永続化するためのフレームワークでオブジェクトとリレーショナルデータベースの橋渡し役を担い、データを、SQLiteというRDBに保存します。
+また逆に、特定の条件に該当するRDBのレコードをオブジェクトに変換して取得できます。
+<img width="716" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/f210919c-6000-4f31-a15e-b92cf0987e03">
+SQLiteはライブラリの形で提供され、ソフトウェアなどに内蔵されます。これを、「組み込み形式」といいます。
+そのため、SQLiteのデータベースとしての利用はソフトウェアだけにとどまります。
+一方
+psql等の一般的なRDBMSは、データベースを利用したい各ソフトウェアはクライアントとして接続するという方式です。
+この方式ですと、同じデータベースを多数のクライアントで共有できます。
+使い分けですが
+ATMなどの複数の端末からデータベースに操作を試みるようなシステムは、「クライアントサーバ型が向いています。
+逆にそのソフトウェア内で完結するようなデータのやり取りをしたい場合は、「組み込み型」が向いています。
+<img width="710" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/319c80fe-946f-4d09-bf44-1b0b8a689bc4">
+
+<img width="703" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/7d4f347c-c74e-4529-af26-64c1cd4c8add">
+
+データベースからデータを取得するコード
+<img width="706" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/413a5f4b-de69-4b2f-aee0-e2928897c269">
+
+##完成した画面
+<img width="406" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/c555f819-523f-4874-9d44-1038e81da78f">
+<img width="405" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/7a4f43c8-fd3d-4336-b3c7-90c2be6b3779">
+<img width="413" alt="image" src="https://github.com/SatoruKikuchi123/swiftProjectNew/assets/98520065/879ec5ce-9f46-4a5b-a34f-85a6b44ce7e9">
+
+
 
 
 
